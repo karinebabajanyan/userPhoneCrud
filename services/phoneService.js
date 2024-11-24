@@ -21,7 +21,7 @@ class PhoneService {
     }
 
     async deletePhone(id) {
-        await Phone.findByIdAndDelete(id);
+       return await Phone.findByIdAndDelete(id);
     }
 }
 

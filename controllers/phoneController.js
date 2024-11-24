@@ -1,37 +1,18 @@
 const PhoneService = require('../services/phoneService');
+const asyncHandler = require('../utils/asyncHandler');
 
-exports.createPhone = async (req, res) => {
-    try {
-        const phone = await PhoneService.createPhone(req.body);
-        res.status(201).json(phone);
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-};
+exports.createPhone = asyncHandler(async (req, res) => {
+    return await PhoneService.createPhone(req.body)
+});
 
-exports.getPhone = async (req, res) => {
-    try {
-        const phone = await PhoneService.getPhone(req.params.id);
-        res.status(200).json(phone);
-    } catch (err) {
-        res.status(404).json({ error: err.message });
-    }
-};
+exports.getPhone = asyncHandler(async (req, res) => {
+    return await PhoneService.getPhone(req.params.id);
+});
 
-exports.updatePhone = async (req, res) => {
-    try {
-        const phone = await PhoneService.updatePhone(req.params.id, req.body);
-        res.status(200).json(phone);
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-};
+exports.updatePhone = asyncHandler(async (req, res) => {
+    return await PhoneService.updatePhone(req.params.id, req.body);
+});
 
-exports.deletePhone = async (req, res) => {
-    try {
-        await PhoneService.deletePhone(req.params.id);
-        res.status(204).send();
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-};
+exports.deletePhone = asyncHandler(async (req, res) => {
+    return await PhoneService.deletePhone(req.params.id);
+});

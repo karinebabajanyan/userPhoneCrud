@@ -33,7 +33,12 @@ Before running this project, ensure you have the following installed:
    cd userPhoneCrud
    ```
 
-3. Install dependencies:
+3.  Copy .env.example to .env and add your credentials:
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Install dependencies:
    ```bash
    npm install
    ```

@@ -1,37 +1,18 @@
 const UserService = require('../services/userService');
+const asyncHandler = require('../utils/asyncHandler');
 
-exports.createUser = async (req, res) => {
-    try {
-        const user = await UserService.createUser(req.body);
-        res.status(201).json(user);
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-};
+exports.createUser = asyncHandler(async (req, res) => {
+    return await UserService.createUser(req.body);
+});
 
-exports.getUser = async (req, res) => {
-    try {
-        const user = await UserService.getUser(req.params.id);
-        res.status(200).json(user);
-    } catch (err) {
-        res.status(404).json({ error: err.message });
-    }
-};
+exports.getUser = asyncHandler(async (req, res) => {
+    return await UserService.getUser(req.params.id);
+});
 
-exports.updateUser = async (req, res) => {
-    try {
-        const user = await UserService.updateUser(req.params.id, req.body);
-        res.status(200).json(user);
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-};
+exports.updateUser = asyncHandler(async (req, res) => {
+    return await UserService.updateUser(req.params.id, req.body);
+});
 
-exports.deleteUser = async (req, res) => {
-    try {
-        await UserService.deleteUser(req.params.id);
-        res.status(204).send();
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-};
+exports.deleteUser = asyncHandler(async (req, res) => {
+    return await UserService.deleteUser(req.params.id);
+});

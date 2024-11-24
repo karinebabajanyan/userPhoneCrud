@@ -1,0 +1,41 @@
+# Node modules - this directory contains all your dependencies, don't track it in Git
+node_modules/
+
+# Logs - You don’t want to commit log files that may be generated at runtime
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variable files - these often contain sensitive information
+.env
+.env.local
+.env.*.local
+
+# Build output directories - if you transpile or bundle your code (e.g., using Babel or Webpack)
+dist/
+build/
+
+# Temporary files and directories created by editors or IDEs
+.vscode/
+.idea/
+
+# Operating System files - These are specific to macOS/Windows and should be ignored
+.DS_Store
+Thumbs.db
+
+# Optional: npm package lock files (in case you don't want to track them)
+# You can track either package-lock.json or yarn.lock, but not both
+# package-lock.json
+# yarn.lock
+
+# Coverage directory for testing frameworks like Jest
+coverage/
+
+# Debug and IDE files for specific editors
+# JetBrains IDEs
+*.iml
+
+# Optional: ignore `test` and `coverage` directories if you don't want to track tests
+test/

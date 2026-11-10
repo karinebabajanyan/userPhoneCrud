@@ -25,15 +25,12 @@ Before running this project, ensure you have the following installed:
    ```bash
    git clone git@github.com:karinebabajanyan/userPhoneCrud.git
    ```
-   Here’s how to make the **Usage** section cross-platform, accounting for different operating systems like Linux, macOS, and Windows:
-   
-   
 2. Navigate to the project directory:
    ```bash
    cd userPhoneCrud
    ```
 
-3.  Copy .env.example to .env and add your credentials:
+3. Copy `.env.example` to `.env` and set `MONGO_URI` and `PORT`:
    ```bash
    cp .env.example .env
    ```
@@ -61,7 +58,7 @@ Before running this project, ensure you have the following installed:
        mongod
        ```
 
-    If you're using a **cloud database** like **MongoDB Atlas**, skip this step and ensure your connection string in `db.js` points to the cloud instance.
+    If you're using a **cloud database** like **MongoDB Atlas**, skip this step and set `MONGO_URI` in your `.env` file to your Atlas connection string.
     
 
 2. **Start the application**:
@@ -71,7 +68,7 @@ Before running this project, ensure you have the following installed:
      npm start
      ```
 
-   This will start the server and make it accessible at `http://localhost:3000`.
+   This starts the server (with nodemon) at `http://localhost:<PORT>`, e.g. `http://localhost:3000` if `PORT=3000`.
 
 ------
 ## API Endpoints
@@ -97,7 +94,7 @@ Before running this project, ensure you have the following installed:
   **Body (JSON)**:
   ```json
   {
-    "name": "Jane Doe Updated",
+    "name": "Jane Doe Updated"
   }
   ```
 
